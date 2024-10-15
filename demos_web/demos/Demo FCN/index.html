@@ -1,0 +1,23 @@
+
+    <h1>Demo de Red de Perceptrones</h1>
+    <div id="controls">
+        <label>Número de neuronas de entrada:
+            <input type="number" id="inputNeurons" value="3" min="1">
+        </label>
+        <label>Número de capas ocultas:
+            <input type="number" id="hiddenLayers" value="2" min="0">
+        </label>
+        <label>Número de neuronas por capa oculta:
+            <input type="number" id="neuronsPerLayer" value="4" min="1">
+        </label>
+        <label>Número de neuronas de salida:
+            <input type="number" id="outputNeurons" value="1" min="1">
+        </label>
+        <button id="updateButton">Actualizar Red</button>
+    </div>
+    <canvas id="networkCanvas" width="800" height="600"></canvas>
+    <div id="description">
+        <h2>Descripción de la Red</h2>
+        <p id="networkDescription"></p>
+        <p id="parameterCount"></p>
+    </div>

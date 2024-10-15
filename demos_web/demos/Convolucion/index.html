@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de Convolución CNN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Visualizador de Convolución CNN</h1>
+    <div id="image-container">
+        <!-- La matriz de imagen 10x10 se generará aquí -->
+    </div>
+
+    <h2>Diseña tu Filtro Convolucional</h2>
+    <div id="filter-settings">
+        <label for="filter-size">Tamaño del Filtro:</label>
+        <select id="filter-size">
+            <option value="3">3x3</option>
+            <option value="5">5x5</option>
+        </select>
+
+        <label for="stride">Stride:</label>
+        <input type="number" id="stride" value="1" min="1" max="5">
+    </div>
+
+    <div id="filter-container">
+        <!-- La matriz del filtro se generará aquí -->
+    </div>
+
+    <button id="apply-button">Aplicar Convolución</button>
+    <button id="reset-button">Restablecer Valores</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
