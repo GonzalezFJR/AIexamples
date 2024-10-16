@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Funciones de Activación</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluimos Chart.js para las gráficas -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Configuración de MathJax -->
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <!-- Incluimos MathJax para renderizar las fórmulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Explorador de Funciones de Activación</h1>
+        <div class="selector">
+            <label for="activation-function">Selecciona una función de activación:</label>
+            <select id="activation-function"></select>
+        </div>
+        <div class="graph-container">
+            <canvas id="activationChart"></canvas>
+        </div>
+        <div class="info">
+            <h2>Fórmula Matemática</h2>
+            <p id="formula"></p>
+            <h2>Descripción</h2>
+            <p id="description"></p>
+            <h2>Usos Comunes</h2>
+            <p id="usage"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

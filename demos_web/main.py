@@ -19,6 +19,8 @@ app.add_middleware(
 from services.api_visual_dnn import dnnvisrouter
 app.include_router(dnnvisrouter)
 
+from services.model_layers_visualizer import layervisrouter
+app.include_router(layervisrouter)
 
 # Montar carpetas estáticas
 app.mount("/static", StaticFiles(directory="static"), name="static")
