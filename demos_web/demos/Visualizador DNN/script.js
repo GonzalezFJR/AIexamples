@@ -169,8 +169,8 @@ function initNetwork() {
                 // Añadir slider como conexión
                 const slider = document.createElement('input');
                 slider.type = 'range';
-                slider.min = '-10';
-                slider.max = '10';
+                slider.min = '-2';
+                slider.max = '2';
                 slider.step = '0.01';
 
                 // Establecer el valor del slider desde los datos

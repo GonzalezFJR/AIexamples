@@ -1,8 +1,4 @@
-# client.py
-
 import time
-import requests
-import torch
 import torch.nn as nn
 
 from api_visual_dnn import draw_network
