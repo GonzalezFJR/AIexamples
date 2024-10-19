@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import APIRouter
 
-import uvicorn
+import numpy as np
 
 
 '''
@@ -113,3 +113,35 @@ async def get_model():
 @layervisrouter.get("/model_version_layer_visualizer")
 async def get_model_version():
     return {"version": model_version}
+
+
+N = 8  # Tamaño inicial de la matriz
+current_matrix = np.random.randint(0, 256, size=(N, N)).tolist()
+
+@layervisrouter.get('/get_matrix')
+async def get_matrix():
+    global current_matrix
+    return {'matrix': current_matrix}
+
+
+#matrix = np.random.randint(0, 256, size=(10, 10)).tolist()
+#data = {'matrix': matrix}
+#response = requests.post(url, json=data)
+
+@layervisrouter.route('/update_matrix', methods=['POST'])
+async def update_matrix(data):
+    global current_matrix
+    # Get data from the request
+    data = data.json
+    matrix = data.get('matrix')
+    if matrix:
+        current_matrix = matrix
+        return ({'status': 'success'})
+    else:
+        return ({'status': 'failed', 'message': 'No se proporcionó una matriz'})
+
+def send_to_cnn_visualizer(matrix, ip='localhost', port=8000):
+    url = f'http://{ip}:{port}/update_matrix'
+    data = {'matrix': matrix}
+    response = requests.post(url, json=data)
+    return response.json()
