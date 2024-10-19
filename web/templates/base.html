@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} - Demos</title>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="/static/bulma.min.css">
+    <style>
+        /* Ajustar la altura de la barra de navegación */
+        .navbar {
+            height: 100px; /* Ajusta esta altura según el tamaño de tu logo */
+        }
+        /* Aumentar el tamaño del logo */
+        .navbar-item img {
+            max-height: 80px; /* Ajusta este tamaño según la proporción de tu logo */
+        }
+        /* Centramos la barra dentro de un ancho razonable */
+        .navbar-brand,
+        .navbar-menu {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        /* Estilos adicionales si quieres una barra central */
+        .navbar-brand {
+            flex-grow: 1;
+            justify-content: flex-start;
+        }
+        .navbar-menu {
+            justify-content: flex-end;
+        }
+    </style>
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar con ajustes para logo y desplegable -->
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/static/images/logo.png" alt="Logo">
+                </a>
+            </div>
+
+            <!-- La barra central con los botones -->
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <!-- Puedo agregar más elementos si lo deseas -->
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Demos
+                        </a>
+                        <div class="navbar-dropdown">
+                            {% for demo in demos %}
+                                <a class="navbar-item" href="/demo/{{ demo }}">
+                                    {{ demo }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Bloque para scripts adicionales -->
+    {% block body_extra %}
+    {% endblock %}
+</body>
+</html>

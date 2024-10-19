@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo de una Neurona Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Neurona Interactiva</h1>
+    <div id="config">
+        <label>Número de inputs:
+            <input type="number" id="numInputs" value="3" min="1">
+        </label>
+        <label>Función de activación:
+            <select id="activationSelect">
+                <option value="σ">σ</option>
+                <option value="ReLU">ReLU</option>
+                <option value="tanh">tanh</option>
+                <option value="none">-</option>
+            </select>
+        </label>
+        <button id="updateNeuron">Actualizar Neurona</button>
+    </div>
+    <div id="neuronContainer">
+        <!-- Aquí se generará dinámicamente la neurona y sus componentes -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

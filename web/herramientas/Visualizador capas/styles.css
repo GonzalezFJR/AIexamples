@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#visualization-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.layer-box {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    width: 250px;
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.input-layer, .output-layer {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.conv-layer {
+    background-color: #3498db;
+    color: white;
+}
+
+.fc-layer {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.pool-layer {
+    background-color: #9b59b6;
+    color: white;
+}
+
+.relu-layer {
+    background-color: #f1c40f;
+    color: black;
+}
+
+.dropout-layer {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.flatten-layer {
+    background-color: #e67e22;
+    color: white;
+}
+
+.other-layer {
+    background-color: #34495e;
+    color: white;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid black;
+    margin: -10px auto;
+}
+
+.activation-layer {
+    background-color: #f1c40f;
+    color: black;
+}
+
+.rnn-layer {
+    background-color: #e67e22;
+    color: white;
+}

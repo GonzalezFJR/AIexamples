@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Demos y Herramientas Disponibles</h1>
+            <div class="columns">
+                <!-- Columna para Demos -->
+                <div class="column">
+                    <h2 class="subtitle">Demos</h2>
+                    <div class="columns is-multiline">
+                        {% for demo in demos %}
+                            <div class="column is-half">
+                                <a href="/demo/{{ demo }}" class="button is-primary is-fullwidth is-large" style="margin-bottom: 20px;">
+                                    {{ demo }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Columna para Herramientas -->
+                <div class="column">
+                    <h2 class="subtitle">Herramientas</h2>
+                    <div class="columns is-multiline">
+                        {% for herramienta in herramientas %}
+                            <div class="column is-half">
+                                <a href="/herramienta/{{ herramienta }}" class="button is-link is-fullwidth is-large" style="margin-bottom: 20px;">
+                                    {{ herramienta }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

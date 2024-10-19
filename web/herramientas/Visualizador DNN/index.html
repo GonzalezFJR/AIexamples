@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <h2 class="title">Visualizador de redes neuronales</h2> -->
+    <!-- Botón para mostrar/ocultar el bloque de código -->
+    <button id="toggleCode" class="button is-link">Modo de uso</button>
+    <!-- Bloque de código que comienza oculto -->
+    <div id="codeBlock" class="box is-hidden" style="margin-top: 1rem;">
+        <pre><code class="python">
+            from api_visual_dnn import draw_network
+            draw_network(model, input, 'localhost', 800)
+        </code></pre>
+    </div>
+    <div id="networkContainer" style="position: relative; width: 800px; height: 600px;"></div>
+    <script src="script.js"></script>
+
+    <!-- Código JavaScript para mostrar/ocultar el bloque de código -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('#toggleCode');
+            const codeBlock = document.querySelector('#codeBlock');
+            
+            toggleButton.addEventListener('click', () => {
+                codeBlock.classList.toggle('is-hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
