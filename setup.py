@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-
+## Install package api_visual_dnn and model_layers_visualizer
 setup(
     name='demoscode',
     version='0.1',
@@ -7,7 +7,8 @@ setup(
     package_dir={'': 'web/services'},
     include_package_data=True,
     install_requires=[
-        # Aquí puedes listar las dependencias, si las hay
+        'api_visual_dnn',
+        'model_layers_visualizer',
     ],
     entry_points={
         'console_scripts': [
