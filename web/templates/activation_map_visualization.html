@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+    <style>
+        .image-container {
+            position: relative;
+            width: 512px;
+            height: 512px;
+        }
+        #originalImage, #activationImage {
+            width: 512px;
+            height: 512px;
+        }
+        #activationImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+    </style>
+{% endblock %}
+
+{% block title %} Visualización de mapas de activación {% endblock %}
+
+{% block content %}
+
+
+<body>
+    <section class="section">
+
+    <!-- Botón para mostrar/ocultar el bloque de código -->
+    <button id="toggleCode" class="button is-link">Modo de uso</button>
+    <!-- Bloque de código que comienza oculto -->
+    <div id="codeBlock" class="box is-hidden" style="margin-top: 1rem;">
+        <pre><code class="python">
+            from activation_maps_cnn import visualize_activation_map
+            visualize_activation_map(imgname, model, layer, host='localhost', port=8000)
+        </code></pre>
+    </div>
+
+        <div class="container">
+            <h1 class="title">Visualización de Mapa de Activación Personalizado</h1>
+            <!-- Slider para transparencia -->
+            <div class="field">
+                <label class="label">Transparencia del Mapa de Activación</label>
+                <input type="range" id="transparencySlider" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <!-- Mostrar la imagen y el mapa de activación -->
+            <div class="field">
+                <div class="image-container">
+                    <img id="originalImage" src="data:image/png;base64,{{ data['original_image'] }}">
+                    <img id="activationImage" src="data:image/png;base64,{{ data['activation_map'] }}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        const activationImage = document.getElementById('activationImage');
+        const transparencySlider = document.getElementById('transparencySlider');
+
+        // Actualizar la transparencia del mapa de activación
+        transparencySlider.addEventListener('input', function() {
+            activationImage.style.opacity = transparencySlider.value;
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('#toggleCode');
+            const codeBlock = document.querySelector('#codeBlock');
+            
+            toggleButton.addEventListener('click', () => {
+                codeBlock.classList.toggle('is-hidden');
+            });
+        });
+    </script>
+</body>
+
+{% endblock %}

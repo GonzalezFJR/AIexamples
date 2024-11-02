@@ -22,6 +22,9 @@ app.include_router(dnnvisrouter)
 from services.model_layers_visualizer import layervisrouter
 app.include_router(layervisrouter)
 
+from services.activation_maps_cnn import actrouter
+app.include_router(actrouter, prefix="/activation_maps")
+
 # Montar carpetas estáticas
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/demos", StaticFiles(directory="demos"), name="demos")
@@ -36,7 +39,7 @@ def get_demos():
 
 def get_herramientas():
     herramientas_dir = "herramientas"
-    return [name for name in os.listdir(herramientas_dir) if os.path.isdir(os.path.join(herramientas_dir, name))]
+    return [name for name in os.listdir(herramientas_dir) if os.path.isdir(os.path.join(herramientas_dir, name))] + ["Mapas de activación"]
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -67,7 +70,11 @@ async def show_herramienta(request: Request, herramienta_name: str):
     herramientas = get_herramientas()
     herramienta_path = os.path.join("herramientas", herramienta_name, "index.html")
     if not os.path.exists(herramienta_path):
-        return HTMLResponse(content="Herramienta no encontrada", status_code=404)
+        if herramienta_name == "Mapas de activación":
+            # redirect to /activation_maps/custom_visualization/
+            return templates.TemplateResponse("activation_map_visualization.html", {"request": request, "data": None})
+        else:
+            return HTMLResponse(content="Herramienta no encontrada", status_code=404)
     with open(herramienta_path, 'r', encoding='utf-8') as f:
         herramienta_content = f.read()
     return templates.TemplateResponse(

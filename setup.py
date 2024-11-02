@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'api_visual_dnn',
         'model_layers_visualizer',
+        'activation_maps_cnn',
     ],
     entry_points={
         'console_scripts': [

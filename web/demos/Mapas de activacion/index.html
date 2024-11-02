@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visualización de Mapas de Activación</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Visualización de Mapas de Activación</h1>
+            <!-- Selección de imagen -->
+            <div class="field">
+                <label class="label">Selecciona una imagen de ejemplo o sube una</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="imageSelect">
+                            <!-- Opciones de imágenes se cargarán dinámicamente -->
+                        </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+            </div>
+            <!-- Selección de modelo -->
+            <div class="field">
+                <label class="label">Selecciona un modelo preentrenado</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="modelSelect">
+                            <!-- Opciones de modelos se cargarán dinámicamente -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Selección de capa -->
+            <div class="field">
+                <label class="label">Selecciona una capa convolucional</label>
+                <div class="control">
+                    <div class="select">
+                        <select id="layerSelect">
+                            <!-- Opciones de capas se cargarán dinámicamente -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Botón para generar el mapa de activación -->
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" id="generateButton">Generar Mapa de Activación</button>
+                </div>
+            </div>
+            <!-- Slider para transparencia -->
+            <div class="field">
+                <label class="label">Transparencia del Mapa de Activación</label>
+                <input type="range" id="transparencySlider" min="0" max="1" step="0.01" value="0.5">
+            </div>
+            <!-- Mostrar la imagen y el mapa de activación -->
+            <div class="field">
+                <div class="image-container">
+                    <img id="originalImage" src="">
+                    <img id="activationImage" src="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/script.js"></script>
+</body>
+</html>

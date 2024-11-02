@@ -1,0 +1,21 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.image-container {
+    position: relative;
+    width: 512px;
+    height: 512px;
+}
+
+#originalImage, #activationImage {
+    width: 512px;
+    height: 512px;
+}
+
+#activationImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
