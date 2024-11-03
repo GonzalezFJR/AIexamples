@@ -115,7 +115,7 @@ def get_activation_map_layer(input_image, model, layer_idx):
     return activation_map_combined
 
 def send_activation_map(image, activation_map, host='localhost', port=8000):
-    server_url=f"http://{host}:{port}/activation_maps/custom_activation_map"):
+    server_url=f"http://{host}:{port}/activation_maps/custom_activation_map"
     # Convertir las imágenes a formato base64
     # image is of shape (3, 224, 224) --> go to (224, 224, 3)
     image = image.transpose((1, 2, 0))
