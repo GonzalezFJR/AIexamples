@@ -67,7 +67,7 @@ function initNetwork() {
 
             if (layerIndex > 0) {
                 // Mostrar función de activación
-                let activationFunc = layer.activations[i] || 'σ';
+                let activationFunc = layer.activations[i] || ' ';
                 if (activationFunc === 'none') {
                     activationFunc = '-';
                 }
@@ -252,7 +252,7 @@ function updateOutputs() {
             sums.push(sum);
         }
 
-        const activationFunc = currentLayer.activations[0] || 'σ';
+        const activationFunc = currentLayer.activations[0] || ' ';
 
         if (activationFunc === 'softmax') {
             layerActivations = softmax(sums);

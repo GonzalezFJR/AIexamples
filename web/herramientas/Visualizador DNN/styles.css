@@ -13,10 +13,10 @@ h1 {
 
 #networkContainer {
     position: relative;
-    width: 800px;
+    width: 1200px;
     height: 600px;
     margin: 0 auto;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
 }
 
 .neuron {
@@ -25,7 +25,7 @@ h1 {
     height: 40px;
     border: 2px solid #000;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #ffffff00;
     text-align: center;
     line-height: 40px;
     font-weight: bold;
@@ -36,12 +36,13 @@ h1 {
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 2px dashed #000;
+    border: 2px dashed #ffffff;
     border-radius: 50%;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     text-align: center;
     line-height: 50px;
     font-weight: bold;
+    font-size: 0px;
     z-index: 1; /* Neuronas de sesgo debajo de los sliders */
 }
 
@@ -65,19 +66,19 @@ h1 {
 .connection {
     position: absolute;
     height: 2px;
-    background-color: #ccc;
+    background-color: #b9b9b9;
     transform-origin: 0 0;
     z-index: 0; /* Conexiones detrás de todo */
 }
 
 .output-box, .input-box {
     position: absolute;
-    width: 80px;
-    height: 30px;
-    border: 1px solid #000;
-    background-color: #e0e0e0;
+    width: 0px;
+    height: 0px;
+    border: 0px solid #ffffff00;
+    background-color: #e0e0e000;
     text-align: center;
-    line-height: 30px;
+    line-height: 0px;
     z-index: 1;
 }
 
@@ -87,8 +88,8 @@ h1 {
     z-index: 1; /* Sliders debajo de las neuronas */
     -webkit-appearance: none;
     appearance: none;
-    background-color: #ccc; /* Color gris para el track del slider */
-    height: 4px;
+    background-color: #c0c0c0; /* Color gris para el track del slider */
+    height: 1px;
     cursor: pointer;
 }
 
@@ -96,15 +97,15 @@ h1 {
     -webkit-appearance: none;
     width: 12px;
     height: 12px;
-    background: #666;
+    background: #ffffff;
     border-radius: 50%;
     cursor: pointer;
     border: none;
 }
 
 .slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
+    width: 1px;
+    height: 1px;
     background: #666;
     border-radius: 50%;
     cursor: pointer;
@@ -112,7 +113,7 @@ h1 {
 }
 
 input[type="number"] {
-    width: 60px;
+    width: 0px;
     text-align: center;
 }
 

@@ -61,7 +61,7 @@ def parse_model(model):
                 activation_funcs = [activation_func] * neurons
                 i += 1
             else:
-                activation_funcs = ['σ'] * neurons  # Valor por defecto
+                activation_funcs = [' '] * neurons  # Valor por defecto
             # Agregar la capa
             layers.append({
                 'neurons': neurons,
