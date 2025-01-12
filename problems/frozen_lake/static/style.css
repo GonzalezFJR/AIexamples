@@ -1,0 +1,84 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* o center si queremos alinear verticalmente también */
+  align-items: center;        /* centra horizontalmente todo el contenido */
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#newGameBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#message {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+#boardContainer {
+  margin-top: 20px;
+  display: inline-block;
+  border: 2px solid #333;
+  /* Con margin: auto y display: block, se puede centrar en otros contextos;
+     pero al tener display: inline-block y el body con text-align: center, 
+     queda centrado igualmente.
+  */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;  /* más grande */
+  height: 100px; /* más grande */
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px; /* tamaño de texto más grande si quieres ver la "S", "F", etc. */
+}
+
+/* Casillas especiales */
+.start {
+  background-color: lightgreen;
+}
+.forbidden {
+  background-color: red;
+}
+.finish {
+  background-color: gold;
+}
+.player {
+  background-color: lightblue;
+}
+
+input[type="number"] {
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  width: 80px; /* ajusta a gusto */
+}
+
+button {
+  margin: 5px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}

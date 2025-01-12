@@ -1,0 +1,40 @@
+<!-- static/dqn.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frozen Lake - DQN</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <h1>Frozen Lake</h1>
+  <h2>Deep Q-Learning</h2>
+
+  <!-- Input para episodios y botón de entrenar -->
+  <div>
+    <label for="dqnEpisodesInput">N° Episodios:</label>
+    <input type="number" id="dqnEpisodesInput" value="1000" min="1" style="width:80px;">
+    <button id="trainDqnBtn">Entrenar y Cargar</button>
+  </div>
+
+  <!-- Botón para cargar/iniciar la partida DQN -->
+  <button id="agentBtn">Iniciar agente de DQL</button>
+
+  <p>Acciones: <span id="actionCounter">0</span></p>
+  <div id="message"></div>
+  <div id="boardContainer"></div>
+
+  <script src="static/board.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("trainDqnBtn").addEventListener("click", () => {
+        trainDQN(); // Función en board.js
+      });
+
+      document.getElementById("agentBtn").addEventListener("click", () => {
+        startAgentPlay(); // Usa la semilla guardada si queremos
+      });
+    });
+  </script>
+</body>
+</html>

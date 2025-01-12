@@ -1,0 +1,39 @@
+<!-- static/landing.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frozen Lake - Inicio</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <style>
+    .big-button {
+      display: block;
+      margin: 20px auto;
+      padding: 20px 40px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+    <h1>Frozen Lake</h1>
+    <button class="big-button" onclick="location.href='/human'">
+      1) Jugar
+    </button>
+    <button class="big-button" onclick="location.href='/classic'">
+      2) Entrenar un agente de Q-Learning clásico
+    </button>
+    <button class="big-button" onclick="location.href='/dqn'">
+      3) Entrenar un agente de Deep Q-Learning
+    </button>
+  </div>
+</body>
+</html>

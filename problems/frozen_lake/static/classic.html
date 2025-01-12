@@ -1,0 +1,43 @@
+<!-- static/classic.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frozen Lake - Q-Learning Clásico</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <h1>Frozen Lake</h1>
+  <h2>Q-Learning clásico</h2>
+
+  <!-- Input para episodios y botón de entrenar -->
+  <div>
+    <label for="classicEpisodesInput">N° Episodios:</label>
+    <input type="number" id="classicEpisodesInput" value="2000" min="1" style="width:80px;">
+    <button id="trainClassicBtn">Entrenar y Cargar</button>
+  </div>
+
+  <!-- Botón para iniciar partida Clásica (con la Q-table cargada) -->
+  <button id="classicBtn">Iniciar agente</button>
+
+  <p>Acciones: <span id="actionCounter">0</span></p>
+  <div id="message"></div>
+  <div id="boardContainer"></div>
+
+  <!-- Cargamos nuestro script principal -->
+  <script src="static/board.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      // Al hacer clic en "Entrenar y Cargar"
+      document.getElementById("trainClassicBtn").addEventListener("click", () => {
+        trainClassic(); // Llamar a la función en board.js
+      });
+
+      // Al hacer clic en "Iniciar Q-Learning Clásico"
+      document.getElementById("classicBtn").addEventListener("click", () => {
+        startClassicPlay(); // Usa la semilla guardada, si quieres
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- static/human.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frozen Lake - Partida</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <h1>Frozen Lake</h1>
+  <h2>Juega una partida</h2>
+
+  <!-- Botón para iniciar nuevo juego humano -->
+  <button id="newGameBtn">Nuevo juego</button>
+
+  <!-- Contador de acciones -->
+  <p>Acciones: <span id="actionCounter">0</span></p>
+
+  <div id="message"></div>
+  <div id="boardContainer"></div>
+
+  <script src="static/board.js"></script>
+  <script>
+    // Al cargar la página, inicializamos una partida humana
+    window.addEventListener("load", () => {
+      newGame(); 
+      const newGameBtn = document.getElementById("newGameBtn");
+      newGameBtn.addEventListener("click", () => {
+        newGame();
+      });
+    });
+  </script>
+</body>
+</html>
